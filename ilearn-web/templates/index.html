@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Define your Goal
+{% endblock %}
+
+
+{% block body %}
+   <form action="{{ url_for('goal') }}" method="post">
+       <input type="text" name="goal" placeholder="Enter your goal" required>
+       <button>submit</button>
+{% endblock %}
