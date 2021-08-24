@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <!-- <script src="./build/sigma.min.js"></script> -->
+    <script src="{{ url_for('static', filename="build/sigma.min.js") }}"></script>
+
+    <style>
+      html { height:100%;}
+      body { height: 100%;}
+      #sigma-container { width:90%; height:50%; background-color:#E1E1E1}
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    I want to learn about Climate Change
+
+
+    <div id='sigma-container'></div>
+    <script>
+      // Initialize sigma:
+      var s = new sigma(
+        {
+           renderer: {
+             container: document.getElementById('sigma-container'),
+             type: 'canvas'
+           },
+           settings: {
+            edgeLabelSize: 'proportional',
+            labelThreshold: 0
+
+           }
+         }
+       );
+
+        // Create a graph object
+        var graph = {
+          nodes: [
+            { id: "n0", label: "CLIMATE CHANGE", x: 0, y: 0, size: 100, color: '#008cc2' },
+            { id: "n1", label: "Climate change adaptation", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n2", label: "Climate change and society", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n3", label: "Climate change and the environment", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n4", label: "Climate change assessment and attribution", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n5", label: "Climate change by country and region", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n6", label: "Climate change feedbacks", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n7", label: "Climate change mitigation", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n8", label: "Greenhouse gases", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n9", label: "Sustainable Development Goal", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }
+          ],
+          edges: [
+            { id: "e0", source: "n0", target: "n1", color: '#282c34', type:'line', size:1 },
+            { id: "e1", source: "n0", target: "n2", color: '#282c34', type:'curve', size:1}, 
+            { id: "e2", source: "n0", target: "n3", color: '#282c34', type:'curve', size:1}, 
+            { id: "e3", source: "n0", target: "n4", color: '#282c34', type:'curve', size:1}, 
+            { id: "e4", source: "n0", target: "n5", color: '#282c34', type:'curve', size:1},
+            { id: "e5", source: "n0", target: "n6", color: '#282c34', type:'curve', size:1},
+            { id: "e6", source: "n0", target: "n7", color: '#282c34', type:'curve', size:1},
+            { id: "e7", source: "n0", target: "n8", color: '#282c34', type:'curve', size:1},
+            { id: "e8", source: "n0", target: "n9", color: '#282c34', type:'curve', size:1}
+          ]
+        }
+
+        // Load the graph in sigma
+        s.graph.read(graph);
+        // Ask sigma to draw it
+        s.refresh();
+    </script>
+    <div>
+      <h2>Explore Concepts</h2>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+adaptation" target="_blank" rel="noopener noreferrer">Climate change adaptation</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+and+society" target="_blank" rel="noopener noreferrer">Climate change and society</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+and+the+environment" target="_blank" rel="noopener noreferrer">Climate change and the environment</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+assessment+and+attribution" target="_blank" rel="noopener noreferrer">Climate change assessment and attribution</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+by+country+and+region" target="_blank" rel="noopener noreferrer">Climate change by country and region</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+feedbacks" target="_blank" rel="noopener noreferrer">Climate change feedbacks</a><br>
+      <a href="https://www.youtube.com/results?search_query=Climate+change+mitigation" target="_blank" rel="noopener noreferrer">Climate change mitigation</a><br>
+      <a href="https://www.youtube.com/results?search_query=Greenhouse+gases" target="_blank" rel="noopener noreferrer">Greenhouse gases</a><br>
+      <a href="https://www.youtube.com/results?search_query=Sustainable+Development+Goal" target="_blank" rel="noopener noreferrer">Sustainable Development Goal</a><br>
+    </div>
+
+     
+{% endblock %}

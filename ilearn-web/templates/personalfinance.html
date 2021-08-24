@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <!-- <script src="./build/sigma.min.js"></script> -->
+    <script src="{{ url_for('static', filename="build/sigma.min.js") }}"></script>
+
+    <style>
+      html { height:100%;}
+      body { height: 100%;}
+      #sigma-container { width:90%; height:50%; background-color:#E1E1E1}
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    I want to learn Personal Finance
+
+
+    <div id='sigma-container'></div>
+    <script>
+      // Initialize sigma:
+      var s = new sigma(
+        {
+           renderer: {
+             container: document.getElementById('sigma-container'),
+             type: 'canvas'
+           },
+           settings: {
+            edgeLabelSize: 'proportional',
+            labelThreshold: 0
+
+           }
+         }
+       );
+
+        // Create a graph object
+        var graph = {
+          nodes: [
+            { id: "n0", label: "PERSONAL FINANCE", x: 0, y: 0, size: 100, color: '#008cc2' },
+            { id: "n1", label: "Finance websites", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n2", label: "Household income", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n3", label: "Informal finance", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n4", label: "Life insurance", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n5", label: "Personal finance education", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n6", label: "Personal financial problems", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n7", label: "Personal taxes", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n8", label: "Retail financial services", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n9", label: "Retirement", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n10", label: "Tax-advantaged savings plans", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }
+            
+          ],
+          edges: [
+            { id: "e0", source: "n0", target: "n1", color: '#282c34', type:'line', size:1 },
+            { id: "e1", source: "n0", target: "n2", color: '#282c34', type:'curve', size:1}, 
+            { id: "e2", source: "n0", target: "n3", color: '#282c34', type:'curve', size:1}, 
+            { id: "e3", source: "n0", target: "n4", color: '#282c34', type:'curve', size:1}, 
+            { id: "e4", source: "n0", target: "n5", color: '#282c34', type:'curve', size:1},
+            { id: "e5", source: "n0", target: "n6", color: '#282c34', type:'curve', size:1},
+            { id: "e6", source: "n0", target: "n7", color: '#282c34', type:'curve', size:1},
+            { id: "e7", source: "n0", target: "n8", color: '#282c34', type:'curve', size:1},
+            { id: "e8", source: "n0", target: "n9", color: '#282c34', type:'curve', size:1}, 
+            { id: "e9", source: "n0", target: "n10", color: '#282c34', type:'curve', size:1}
+          ]
+        }
+
+        // Load the graph in sigma
+        s.graph.read(graph);
+        // Ask sigma to draw it
+        s.refresh();
+    </script>
+    <div>
+      <h2>Explore Concepts</h2>
+      <a href="https://www.youtube.com/results?search_query=Finance+websites" target="_blank" rel="noopener noreferrer">Finance websites</a><br>
+      <a href="https://www.youtube.com/results?search_query=Household+income" target="_blank" rel="noopener noreferrer">Household income</a><br>
+      <a href="https://www.youtube.com/results?search_query=Informal+finance" target="_blank" rel="noopener noreferrer">Informal finance</a><br>
+      <a href="https://www.youtube.com/results?search_query=Life+insurance" target="_blank" rel="noopener noreferrer">Life insurance</a><br>
+      <a href="https://www.youtube.com/results?search_query=Mortgage" target="_blank" rel="noopener noreferrer">Mortgage</a><br>
+      <a href="https://www.youtube.com/results?search_query=Personal+finance+education" target="_blank" rel="noopener noreferrer">Personal finance education</a><br>
+      <a href="https://www.youtube.com/results?search_query=Personal+financial+problems" target="_blank" rel="noopener noreferrer">Personal financial problems</a><br>
+      <a href="https://www.youtube.com/results?search_query=Personal+taxes" target="_blank" rel="noopener noreferrer">Personal taxes</a><br>
+      <a href="https://www.youtube.com/results?search_query=Retail+financial+services" target="_blank" rel="noopener noreferrer">Retail financial services</a><br>
+      <a href="https://www.youtube.com/results?search_query=Retirement" target="_blank" rel="noopener noreferrer">Retirement</a><br>
+      <a href="https://www.youtube.com/results?search_query=Tax-advantaged+savings+plans" target="_blank" rel="noopener noreferrer">Tax-advantaged savings plans</a><br>
+    </div>
+
+     
+{% endblock %}

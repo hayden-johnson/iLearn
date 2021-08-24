@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <!-- <script src="./build/sigma.min.js"></script> -->
+    <script src="{{ url_for('static', filename="build/sigma.min.js") }}"></script>
+
+    <style>
+      html { height:100%;}
+      body { height: 100%;}
+      #sigma-container { width:90%; height:50%; background-color:#E1E1E1}
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    I want to learn Machine Learning
+
+    <p>Machine learning (ML) is the study of computer algorithms that improve automatically through experience. It is seen as a subset of artificial intelligence. Machine learning algorithms build a mathematical model based on sample data, known as "training data", in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as email filtering and computer vision, where it is difficult or infeasible to develop conventional algorithms to perform the needed tasks. Machine learning is closely related to computational statistics, which focuses on making predictions using computers. The study of mathematical optimization delivers methods, theory and application domains to the field of machine learning. Data mining is a related field of study, focusing on exploratory data analysis through unsupervised learning. In its application across business problems, machine learning is also referred to as predictive analytics.</p>
+
+    <div id='sigma-container'></div>
+    <script>
+      
+      // Initialize sigma:
+      var s = new sigma(
+        {
+           renderer: {
+             container: document.getElementById('sigma-container'),
+             type: 'canvas'
+           },
+           settings: {
+            edgeLabelSize: 'proportional',
+            labelThreshold: 0
+
+           }
+         }
+       );
+
+        // Create a graph object
+        var graph = {
+          nodes: [
+            { id: "n0", label: "MACHINE LEARNING", x: 0, y: 0, size: 100, color: '#008cc2' },
+            { id: "n1", label: "Applied machine learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n2", label: "Artificial intelligence conferences", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n3", label: "Artificial neural networks", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n4", label: "Bayesian networks", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n5", label: "Classification Algorithms", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n6", label: "Cluster analysis", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n7", label: "Computational learning theory", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n8", label: "Data mining and machine learning software", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n9", label: "Datasets in machine learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n10", label: "Deep learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n11", label: "Dimension reduction", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n12", label: "Ensemble learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n13", label: "Evolutionary algorithms", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n14", label: "Genetic programming", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n15", label: "Inductive logic programming", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n16", label: "Kernel methods for machine learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n17", label: "Latent variable models", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n18", label: "Learning in computer vision", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n19", label: "Log-linear models", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n20", label: "Loss functions", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n21", label: "Machine learning algorithms", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n22", label: "Machine learning researchers", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n23", label: "Machine learning task", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n24", label: "Markov models", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n25", label: "Reinforcement learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n26", label: "Semisupervised learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }, 
+            { id: "n27", label: "Signal processing conferences", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n28", label: "Statistical natural language processing", x: Math.random(), y: Math.random(), size: 25, color: '#57821' },
+            { id: "n29", label: "Structured prediction", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n30", label: "Supervised learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n31", label: "Support vector machines", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' },
+            { id: "n32", label: "Unsupervised learning", x: Math.random(), y: Math.random(), size: 25, color: '#E57821' }
+
+          ],
+          edges: [
+            { id: "e0", source: "n0", target: "n1", color: '#282c34', type:'line', size:1 },
+            { id: "e1", source: "n0", target: "n2", color: '#282c34', type:'curve', size:1}, 
+            { id: "e2", source: "n0", target: "n3", color: '#282c34', type:'curve', size:1}, 
+            { id: "e3", source: "n0", target: "n4", color: '#282c34', type:'curve', size:1}, 
+            { id: "e4", source: "n0", target: "n5", color: '#282c34', type:'curve', size:1},
+            { id: "e5", source: "n0", target: "n6", color: '#282c34', type:'curve', size:1},
+            { id: "e6", source: "n0", target: "n7", color: '#282c34', type:'curve', size:1},
+            { id: "e7", source: "n0", target: "n8", color: '#282c34', type:'curve', size:1},
+            { id: "e8", source: "n0", target: "n9", color: '#282c34', type:'curve', size:1},
+            { id: "e9", source: "n0", target: "n10", color: '#282c34', type:'curve', size:1},
+            { id: "e10", source: "n0", target: "n11", color: '#282c34', type:'curve', size:1},
+            { id: "e11", source: "n0", target: "n12", color: '#282c34', type:'curve', size:1},
+            { id: "e12", source: "n0", target: "n13", color: '#282c34', type:'curve', size:1},
+            { id: "e13", source: "n0", target: "n14", color: '#282c34', type:'curve', size:1},
+            { id: "e14", source: "n0", target: "n15", color: '#282c34', type:'curve', size:1},
+            { id: "e15", source: "n0", target: "n16", color: '#282c34', type:'curve', size:1},
+            { id: "e16", source: "n0", target: "n17", color: '#282c34', type:'curve', size:1},
+            { id: "e17", source: "n0", target: "n18", color: '#282c34', type:'curve', size:1},
+            { id: "e18", source: "n0", target: "n19", color: '#282c34', type:'curve', size:1},
+            { id: "e19", source: "n0", target: "n20", color: '#282c34', type:'curve', size:1},
+            { id: "e20", source: "n0", target: "n21", color: '#282c34', type:'curve', size:1},
+            { id: "e21", source: "n0", target: "n22", color: '#282c34', type:'curve', size:1},
+            { id: "e22", source: "n0", target: "n23", color: '#282c34', type:'curve', size:1},
+            { id: "e23", source: "n0", target: "n24", color: '#282c34', type:'curve', size:1},
+            { id: "e24", source: "n0", target: "n25", color: '#282c34', type:'curve', size:1},
+            { id: "e25", source: "n0", target: "n26", color: '#282c34', type:'curve', size:1},
+            { id: "e26", source: "n0", target: "n27", color: '#282c34', type:'curve', size:1},
+            { id: "e27", source: "n0", target: "n28", color: '#282c34', type:'curve', size:1},
+            { id: "e28", source: "n0", target: "n29", color: '#282c34', type:'curve', size:1},
+            { id: "e29", source: "n0", target: "n30", color: '#282c34', type:'curve', size:1},
+            { id: "e30", source: "n0", target: "n31", color: '#282c34', type:'curve', size:1},
+            { id: "e31", source: "n0", target: "n32", color: '#282c34', type:'curve', size:1}
+          ]
+        }
+
+        // Load the graph in sigma
+        s.graph.read(graph);
+        // Ask sigma to draw it
+        s.refresh();
+    </script>
+    <div>
+      <h2>Explore Concepts</h2>
+      <a href="https://www.youtube.com/results?search_query=Applied+machine+learning" target="_blank" rel="noopener noreferrer">Applied machine learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Artificial+intelligence+conferences" target="_blank" rel="noopener noreferrer">Artificial intelligence conferences</a><br>
+      <a href="https://www.youtube.com/results?search_query=Artificial+neural+networks" target="_blank" rel="noopener noreferrer">Artificial neural networks</a><br>
+      <a href="https://www.youtube.com/results?search_query=Bayesian+networks" target="_blank" rel="noopener noreferrer">Bayesian networks</a><br>
+      <a href="https://www.youtube.com/results?search_query=Classification+algorithms" target="_blank" rel="noopener noreferrer">Classification algorithms</a><br>
+      <a href="https://www.youtube.com/results?search_query=Cluster+analysis" target="_blank" rel="noopener noreferrer">Cluster analysis</a><br>
+      <a href="https://www.youtube.com/results?search_query=Computational+learning+theory" target="_blank" rel="noopener noreferrer">Computational learning theory</a><br>
+      <a href="https://www.youtube.com/results?search_query=Data+mining+and+machine+learning+software" target="_blank" rel="noopener noreferrer">Data mining and machine learning software</a><br>
+      <a href="https://www.youtube.com/results?search_query=Datasets+in+machine+learning" target="_blank" rel="noopener noreferrer">Datasets in machine learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Deep+learning" target="_blank" rel="noopener noreferrer">Deep Learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Dimension+reduction" target="_blank" rel="noopener noreferrer">Dimension reduction</a><br>
+      <a href="https://www.youtube.com/results?search_query=Ensemble+learning" target="_blank" rel="noopener noreferrer">Ensemble learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Evolutionary+algorithms" target="_blank" rel="noopener noreferrer">Evolutionary algorithms</a><br>
+      <a href="https://www.youtube.com/results?search_query=Genetic+programming" target="_blank" rel="noopener noreferrer">Genetic programming</a><br>
+      <a href="https://www.youtube.com/results?search_query=Inductive+logic+programming" target="_blank" rel="noopener noreferrer">Inductive logic programming</a><br>
+      <a href="https://www.youtube.com/results?search_query=Kernel+methods+for+machine+learning" target="_blank" rel="noopener noreferrer">Kernel methods for machine learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Latent+variable+models" target="_blank" rel="noopener noreferrer">Latent variable models</a><br>
+      <a href="https://www.youtube.com/results?search_query=Learning+in+computer+vision" target="_blank" rel="noopener noreferrer">Learning in computer vision</a><br>
+      <a href="https://www.youtube.com/results?search_query=Log-linear+models" target="_blank" rel="noopener noreferrer">Log-linear models</a><br>
+      <a href="https://www.youtube.com/results?search_query=Loss+functions" target="_blank" rel="noopener noreferrer">Loss functions</a><br>
+      <a href="https://www.youtube.com/results?search_query=Machine+learning+algorithms" target="_blank" rel="noopener noreferrer">Machine learning algorithms</a><br>
+      <a href="https://www.youtube.com/results?search_query=Machine+learning+researchers" target="_blank" rel="noopener noreferrer">Machine learning researchers</a><br>
+      <a href="https://www.youtube.com/results?search_query=Machine+learning+task" target="_blank" rel="noopener noreferrer">Machine learning task</a><br>
+      <a href="https://www.youtube.com/results?search_query=Markov+models" target="_blank" rel="noopener noreferrer">Markov models</a><br>
+      <a href="https://www.youtube.com/results?search_query=Reinforcement+learning" target="_blank" rel="noopener noreferrer">Reinforcement learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Semisupervised+learning" target="_blank" rel="noopener noreferrer">Semisupervised learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Signal+processing+conferences" target="_blank" rel="noopener noreferrer">Signal processing conferences</a><br>
+      <a href="https://www.youtube.com/results?search_query=Statistical+natural+language+processing" target="_blank" rel="noopener noreferrer">Statistical natural language processing</a><br>
+      <a href="https://www.youtube.com/results?search_query=Structured+prediction" target="_blank" rel="noopener noreferrer">Structured prediction</a><br>
+      <a href="https://www.youtube.com/results?search_query=Supervised+learning" target="_blank" rel="noopener noreferrer">Supervised learning</a><br>
+      <a href="https://www.youtube.com/results?search_query=Support+vector+machines" target="_blank" rel="noopener noreferrer">Support vector machines</a><br>
+      <a href="https://www.youtube.com/results?search_query=Unsupervised+learning" target="_blank" rel="noopener noreferrer">Unsupervised learning</a><br>
+    </div>
+
+     
+{% endblock %}

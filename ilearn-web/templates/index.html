@@ -5,8 +5,10 @@
 {% endblock %}
 
 
+
 {% block body %}
-   <form action="{{ url_for('goal') }}" method="post">
-       <input type="text" name="goal" placeholder="Enter your goal" required>
-       <button>submit</button>
+<p>I want to learn...</p>
+    <a class="button" href="{{ url_for('machinelearning') }}">Machine Learning</a><br>
+    <a class="button" href="{{ url_for('climatechange') }}">Climate Change</a><br>
+    <a class="button" href="{{ url_for('personalfinance') }}">Personal Finance</a><br>
 {% endblock %}
